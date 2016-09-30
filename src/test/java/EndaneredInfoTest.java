@@ -41,5 +41,62 @@ public class EndaneredInfoTest {
         testEndaneredInfo.setHealth("one");
     } catch (UnsupportedOperationException exception){ }
     assertTrue(testEndaneredInfo.getHealth().equals(""));
+  }
+
+  @Test
+  public void equals_FirstEndaneredInfoAndSecondEndaneredInfo_true() {
+    EndaneredInfo firstEndaneredInfo = new EndaneredInfo(1);
+    EndaneredInfo secondEndaneredInfo = new EndaneredInfo(1);
+    assertTrue(firstEndaneredInfo.equals(secondEndaneredInfo));
+  }
+
+  @Test
+  public void save_savesTestEndaneredInfoToDatabase_true() {
+    EndaneredInfo testEndaneredInfo = new EndaneredInfo(1);
+    testEndaneredInfo.save();
+    assertTrue(testEndaneredInfo.getId() > 0);
+  }
+
+  @Test
+  public void all_saveTestEndaneredInfoToDatabase_true() {
+    EndaneredInfo firstEndaneredInfo = new EndaneredInfo(1);
+    firstEndaneredInfo.setAge("newborn");
+	firstEndaneredInfo.setHealth("healthy");
+    firstEndaneredInfo.save();
+    assertTrue(firstEndaneredInfo.equals(EndaneredInfo.all().get(0)));
+  }
+
+  @Test
+  public void find_returnsSameEndaneredInfoId_true() {
+    EndaneredInfo firstEndaneredInfo = new EndaneredInfo(1);
+    firstEndaneredInfo.setAge("newborn");
+	firstEndaneredInfo.setHealth("healthy");
+    firstEndaneredInfo.save();
+    EndaneredInfo secondEndaneredInfo = new EndaneredInfo(1);
+    secondEndaneredInfo.setAge("newborn");
+	secondEndaneredInfo.setHealth("healthy");
+    secondEndaneredInfo.save();
+    EndaneredInfo savedEndaneredInfo = EndaneredInfo.find(secondEndaneredInfo.getId());
+    assertTrue(secondEndaneredInfo.equals(savedEndaneredInfo));
+  }
+
+  // @Test
+  // public void update_updatesEndaneredInfoWithSameContent_true() {
+  //   int animal_id = 2;
+  //   EndaneredInfo firstEndaneredInfo = new EndaneredInfo(1);
+  //   firstEndaneredInfo.save();
+  //   firstEndaneredInfo.update(name);
+  //   EndaneredInfo findEndaneredInfo = EndaneredInfo.find(firstEndaneredInfo.getId());
+  //   firstEndaneredInfo = EndaneredInfo.find(firstEndaneredInfo.getId());
+  //   assertEquals(name, findEndaneredInfo.getName());
+  // }
+
+  @Test
+  public void delete_deletesEndaneredInfo_true() {
+    EndaneredInfo testEndaneredInfo = new EndaneredInfo(1);
+    testEndaneredInfo.save();
+    int id = testEndaneredInfo.getId();
+    testEndaneredInfo.delete();
+    assertEquals(null, EndaneredInfo.find(id));
   }    
 }
