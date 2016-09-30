@@ -33,5 +33,17 @@ public class EndaneredInfo {
   public String getAge() {
   	return age;
   }
+
+  public void setHealth(String health) {
+  	if (healthLevel1.equals(health) || healthLevel2.equals(health) || healthLevel2.equals(health)) {
+  	  this.health = health;
+  	} else {
+  	  throw new UnsupportedOperationException("You need to type in 'newborn', 'young', and 'adult'");
+  	}
+  }
+
+  public String getHealth() {
+  	return health;
+  }
   
 }
