@@ -80,16 +80,17 @@ public class EndaneredInfoTest {
     assertTrue(secondEndaneredInfo.equals(savedEndaneredInfo));
   }
 
-  // @Test
-  // public void update_updatesEndaneredInfoWithSameContent_true() {
-  //   int animal_id = 2;
-  //   EndaneredInfo firstEndaneredInfo = new EndaneredInfo(1);
-  //   firstEndaneredInfo.save();
-  //   firstEndaneredInfo.update(name);
-  //   EndaneredInfo findEndaneredInfo = EndaneredInfo.find(firstEndaneredInfo.getId());
-  //   firstEndaneredInfo = EndaneredInfo.find(firstEndaneredInfo.getId());
-  //   assertEquals(name, findEndaneredInfo.getName());
-  // }
+  @Test
+  public void update_updatesEndaneredInfoWithSameContent_true() {
+    String age = "young";
+    EndaneredInfo firstEndaneredInfo = new EndaneredInfo(1);
+    firstEndaneredInfo.save();
+    firstEndaneredInfo.setAge("young");
+	firstEndaneredInfo.setHealth("ill");
+    firstEndaneredInfo.update();
+    EndaneredInfo findEndaneredInfo = EndaneredInfo.find(firstEndaneredInfo.getId());
+    assertEquals(age, findEndaneredInfo.getAge());
+  }
 
   @Test
   public void delete_deletesEndaneredInfo_true() {

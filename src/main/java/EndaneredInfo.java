@@ -78,13 +78,13 @@ public class EndaneredInfo {
     }
   }
 
-  public void update(String health, String age) {
+  public void update() {
     try (Connection con = DB.sql2o.open()) {
       String sql = "UPDATE endaneredinfos SET health = :health, age = :age WHERE id = :id";
       con.createQuery(sql)
       .addParameter("id", this.id)
-      .addParameter("health", health)
-      .addParameter("age", age)
+      .addParameter("health", this.health)
+      .addParameter("age", this.age)
       .executeUpdate();
     }
   }
