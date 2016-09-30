@@ -23,7 +23,7 @@ public class EndaneredInfo {
   }
 
   public void setAge(String age) {
-  	if (ageLevel1.equals(age) || ageLevel2.equals(age) || ageLevel2.equals(age)) {
+  	if (ageLevel1.equals(age) || ageLevel2.equals(age) || ageLevel3.equals(age)) {
   	  this.age = age;
   	} else {
   	  throw new UnsupportedOperationException("You need to type in 'newborn', 'young', and 'adult'");
@@ -35,7 +35,7 @@ public class EndaneredInfo {
   }
 
   public void setHealth(String health) {
-  	if (healthLevel1.equals(health) || healthLevel2.equals(health) || healthLevel2.equals(health)) {
+  	if (healthLevel1.equals(health) || healthLevel2.equals(health) || healthLevel3.equals(health)) {
   	  this.health = health;
   	} else {
   	  throw new UnsupportedOperationException("You need to type in 'newborn', 'young', and 'adult'");

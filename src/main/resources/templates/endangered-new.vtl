@@ -1,0 +1,23 @@
+<h1>Add new Endangered Animal</h1>
+
+<form action="/endangeredanimal/new" method="post">
+  <div class='form-group'>
+  	<label for='name'>Name for Animal</label>
+  	<input name='name' id='name' type='text' class='form-control' required />
+  </div>
+
+  <h4>Age for Animal</h4>
+  <label class="radio-inline"><input type="radio" name="age" value="newborn">newborn</label>
+  <label class="radio-inline"><input type="radio" name="age" value="young">young</label>
+  <label class="radio-inline"><input type="radio" name="age" value="adult">adult</label>
+
+  <h4>Healthy for Animal</h4>
+  <label class="radio-inline"><input type="radio" name="healthy" value="healthy">healthy</label>
+  <label class="radio-inline"><input type="radio" name="healthy" value="okay">okay</label>
+  <label class="radio-inline"><input type="radio" name="healthy" value="ill">ill</label>
+
+  <br />
+  <br />
+  
+  <button type='submit' class='btn btn-success'>Submit</button>
+</form>
