@@ -83,7 +83,7 @@ public class EndangeredAnimalTest {
     testEndaneredInfo.setAge("young");
     testEndaneredInfo.setHealth("ill");
     testEndaneredInfo.save();
-    EndaneredInfo foundEndaneredInfo = testEndangeredAnimal.FindInfo();
+    EndaneredInfo foundEndaneredInfo = testEndangeredAnimal.findInfo();
     assertTrue(foundEndaneredInfo.equals(testEndaneredInfo));
   }
 

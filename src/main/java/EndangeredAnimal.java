@@ -27,4 +27,14 @@ public class EndangeredAnimal extends Zoological {
              .executeAndFetch(EndangeredAnimal.class);
     }
   }
+
+  public EndaneredInfo findInfo() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM endaneredinfos where animal_id=:id";
+      EndaneredInfo endaneredinfo = con.createQuery(sql)
+        .addParameter("id", this.id)
+        .executeAndFetchFirst(EndaneredInfo.class);
+      return endaneredinfo;
+    }
+  }
 }

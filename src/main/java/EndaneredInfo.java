@@ -115,4 +115,14 @@ public class EndaneredInfo {
              .executeAndFetch(EndaneredInfo.class);
     }
   }
+
+  public EndangeredAnimal FindAnimal() {
+  	try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM animals where id=:id and type = true";
+      EndangeredAnimal animal = con.createQuery(sql)
+        .addParameter("id", animal_id)
+        .executeAndFetchFirst(EndangeredAnimal.class);
+      return animal;
+    }
+  }
 }
