@@ -1,0 +1,29 @@
+body {
+  background-color: silver;
+}
+
+nav {
+  background-color: #eee !important;
+}
+
+nav a {
+  color: black !important;
+}
+
+nav a:hover {
+  color: dimgray !important;
+}
+
+.list-title {
+  text-align: center;
+  border-bottom-style: solid;
+  padding-bottom: 20px;
+}
+
+.space {
+  text-indent: 30px;
+}
+
+.remove {
+  padding-top: 10px;
+}
