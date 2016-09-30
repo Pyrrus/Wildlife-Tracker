@@ -3,8 +3,8 @@ import static org.junit.Assert.*;
 
 public class EndangeredAnimalTest {
 
-  // @Rule
-  // public DatabaseRule database = new DatabaseRule();
+  @Rule
+  public DatabaseRule database = new DatabaseRule();
 
   @Test
   public void EndangeredAnimal_correctlyInstantiates_true() {
