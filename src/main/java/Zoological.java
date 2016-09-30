@@ -49,6 +49,13 @@ public abstract class Zoological {
       .addParameter("name", name)
       .addParameter("type", type)
       .executeUpdate();
+
+      if (this.type == true && type == false) {
+        sql = "DELETE FROM endaneredinfos WHERE animal_id = :id;";
+        con.createQuery(sql)
+          .addParameter("id", id)
+          .executeUpdate();
+      }
     }
   }
 
@@ -58,6 +65,13 @@ public abstract class Zoological {
       con.createQuery(sql)
         .addParameter("id", id)
         .executeUpdate();
+
+      if (this.type == true) {
+        sql = "DELETE FROM endaneredinfos WHERE animal_id = :id;";
+        con.createQuery(sql)
+          .addParameter("id", id)
+          .executeUpdate();
       }
+    }
   }
 }

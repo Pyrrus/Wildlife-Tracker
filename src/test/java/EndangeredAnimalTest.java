@@ -67,12 +67,34 @@ public class EndangeredAnimalTest {
   }
 
   @Test
+  public void update_updatesEndangeredAnimalWithchangeFalseAndRemoveInfo() {
+    String name = "next";
+    EndangeredAnimal firstEndangeredAnimal = new EndangeredAnimal("Great Cat of water");
+    firstEndangeredAnimal.save();
+    EndaneredInfo testEndaneredInfo = new EndaneredInfo(firstEndangeredAnimal.getId());
+    testEndaneredInfo.setAge("young");
+    testEndaneredInfo.setHealth("ill");
+    testEndaneredInfo.save();
+    int id = testEndaneredInfo.getId();
+    firstEndangeredAnimal.update(name, false);
+    Animal findAnimal = Animal.find(firstEndangeredAnimal.getId());
+    assertEquals(null, EndaneredInfo.find(id));
+    assertEquals(name, findAnimal.getName());
+  }
+
+  @Test
   public void delete_deletesEndangeredAnimal_true() {
     EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Great Cat of water");
     testEndangeredAnimal.save();
     int id = testEndangeredAnimal.getId();
+    EndaneredInfo testEndaneredInfo = new EndaneredInfo(testEndangeredAnimal.getId());
+    testEndaneredInfo.setAge("young");
+    testEndaneredInfo.setHealth("ill");
+    testEndaneredInfo.save();
+    int id2 = testEndaneredInfo.getId();
     testEndangeredAnimal.delete();
     assertEquals(null, EndangeredAnimal.find(id));
+    assertEquals(null, EndaneredInfo.find(id));
   }
 
   @Test
