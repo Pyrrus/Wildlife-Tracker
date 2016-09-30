@@ -77,7 +77,7 @@ public class Sighting {
       con.createQuery(sql)
         .addParameter("id", id)
         .executeUpdate();
-      }
+    }
   }
 
   public static Sighting find(int id) {
