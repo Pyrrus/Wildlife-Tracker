@@ -1,18 +1,43 @@
-# site using spark, java and postgresql
+# Wildlife Tracker site using spark, java and postgresql
 
-## , 9/30/16
+## This site will uses java and postgresql to save and display your information, 9/30/16
 
 #### By **Adam Gorbahn**
 
 ## Description
-
-
-## User Stories
-
+This made for the wildlife tracker to know are the sightings of the animals in Portland, OR.
 
 ## Specifications
 
+#### '/endangeredanimal/new' page
 
+user input                | output
+------------------------- | -------------
+Type in the endangeredanimal text fields | giving endangeredanimal by the user in the input tag
+
+user input                | output
+------------------------- | -------------
+click on the "submit" button | This will make the endangeredanimal given by the user. The site will send them to the "/endangeredanimal" page. Update page with new endangeredanimal. 
+
+#### '/animal/new' page
+
+user input                | output
+------------------------- | -------------
+Type in the animal text fields | giving animal by the user in the input tag
+
+user input                | output
+------------------------- | -------------
+click on the "submit" button | This will make the animal given by the user. The site will send them to the "/animal" page. Update page with new animal.
+
+#### '/sighting/new' page
+
+user input                | output
+------------------------- | -------------
+Type in the sighting text fields and pick(s) for Animals | giving sighting by the user in the input tag
+
+user input                | output
+------------------------- | -------------
+click on the "submit" button | This will make the sighting given by the user. The site will send them to the "/" page. Update two pages with new sighting for the animals.  
 
 ## Setup/Installation Requirements
 
@@ -21,7 +46,6 @@
 ## code
 
 The sql file is in the folder call SQL
-
 
 ```
 In Postgresql:

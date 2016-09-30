@@ -1,5 +1,4 @@
-<h1>List for Endanered Animal are not endanered</h1>
-<h2>If need to edit the information click on the names on any Endanered Animal</h2>
+<h1>List for Endanered Animal</h1>
 <div class="row">
   <div class="col-md-12">
   	<h3 class="list-title">Endanered Animal list:</h3>
@@ -24,7 +23,6 @@
 	  <tbody>
 	  #if ($animals.size() > 0)
 	 	#foreach ($animal in $animals)
-	 	   <a href="/endaneredanimal/$animal.getId()">
 			 <tr>
 			   <td>
 				 $animal.getName()
@@ -74,7 +72,6 @@
 				#end
 			   </td>
 			 </tr>
-		   </a>
 	 	#end
 	  #else 
 	    <tr>
