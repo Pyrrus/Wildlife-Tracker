@@ -24,4 +24,11 @@ public class AnimalTest {
     assertEquals(false, testAnimal.getType());
   }
 
+  @Test
+  public void equals_FirstAnimalAndSecondAnimal_true() {
+    Animal firstAnimal = new Animal("Black Bird");
+    Animal secondAnimal = new Animal("Black Bird");
+    assertTrue(firstAnimal.equals(secondAnimal));
+  }
+
 }

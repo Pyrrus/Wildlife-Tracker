@@ -24,4 +24,11 @@ public class EndangeredAnimalTest {
     assertEquals(true, testEndangeredAnimal.getType());
   }
 
+  @Test
+  public void equals_FirstAnimalAndSecondAnimal_true() {
+    EndangeredAnimal firstEndangeredAnimal = new EndangeredAnimal("Great Cat of water");
+    EndangeredAnimal secondEndangeredAnimal = new EndangeredAnimal("Great Cat of water");
+    assertTrue(firstEndangeredAnimal.equals(secondEndangeredAnimal));
+  }
+
 }
