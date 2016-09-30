@@ -60,7 +60,7 @@ public class EndangeredAnimalTest {
     String name = "next";
     EndangeredAnimal firstEndangeredAnimal = new EndangeredAnimal("Great Cat of water");
     firstEndangeredAnimal.save();
-    firstEndangeredAnimal.update(name, false);
+    firstEndangeredAnimal.update(name, true);
     EndangeredAnimal findEndangeredAnimal = EndangeredAnimal.find(firstEndangeredAnimal.getId());
     firstEndangeredAnimal = EndangeredAnimal.find(firstEndangeredAnimal.getId());
     assertEquals(name, findEndangeredAnimal.getName());

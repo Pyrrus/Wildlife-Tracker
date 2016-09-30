@@ -31,7 +31,7 @@ public class AnimalTest {
     assertTrue(firstAnimal.equals(secondAnimal));
   }
 
-   @Test
+  @Test
   public void save_savesTestAnimalToDatabase_true() {
     Animal testAnimal = new Animal("Black Bird");
     testAnimal.save();
@@ -74,6 +74,4 @@ public class AnimalTest {
     testAnimal.delete();
     assertEquals(null, Animal.find(id));
   }
-
-
 }
