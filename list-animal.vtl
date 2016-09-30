@@ -1,0 +1,75 @@
+<h1>List for Animal are not endanered</h1>
+<div class="row">
+  <div class="col-md-12">
+  	<h3 class="list-title">Animal list:</h3>
+    <a href = "/animal/new" class="btn btn-primary btn-block">Add new Animal</a>
+  	<table class="table table-striped table-hover table-responsive">
+	  <thead>
+	    <tr>
+		  <th>
+			Name
+		  </th>
+		  <th>
+			Sighting
+		  </th>
+		</tr>
+	  </thead>
+	  <tbody>
+	  #if ($animals.size() > 0)
+	 	#foreach ($animal in $animals)
+	 	   <a href="/animal/$animal.getId()">
+			 <tr>
+			   <td>
+				 $animal.getName()
+			   </td>
+			   <td>
+			    #if ($animal.getSighting().size() > 0)
+			      <table class="table table-striped table-hover table-responsive">
+					<thead>
+					  <tr>
+						<th>
+						  Ranger Name
+						</th>
+						<th>
+						  Location
+						</th>
+						<th>
+						  Lest Sighting Time
+						</th>
+					</tr>
+					</thead>
+					<tbody>
+	 			      #foreach ($sighting in $animal.getSighting())
+						<tr>
+						  <td>
+							$sighting.getRanger()
+						  </td>
+						  <td>
+							$sighting.getLoction()
+						  </td>
+						  <td>
+							$sighting.getSee()
+						  </td>
+						</tr>
+				      #end
+				  	</tbody>
+				  </table>
+				#else
+				 <p>
+				   Have not be see yet
+				 </p>
+				#end
+			   </td>
+			 </tr>
+	 	#end
+	  #else
+	    <tr>
+	      <td>
+	        <h3>need to add more animals</h3>
+	      </td>
+	    </tr>
+	  #end
+	  </tbody>
+	</table>
+  </div>
+</div>
