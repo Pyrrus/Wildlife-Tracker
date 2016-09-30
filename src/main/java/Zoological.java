@@ -72,6 +72,11 @@ public abstract class Zoological {
           .addParameter("id", id)
           .executeUpdate();
       }
+
+      sql = "DELETE FROM sightings WHERE animal_id = :id;";
+      con.createQuery(sql)
+        .addParameter("id", id)
+        .executeUpdate();
     }
   }
 }
