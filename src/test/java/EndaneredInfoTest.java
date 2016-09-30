@@ -99,5 +99,17 @@ public class EndaneredInfoTest {
     int id = testEndaneredInfo.getId();
     testEndaneredInfo.delete();
     assertEquals(null, EndaneredInfo.find(id));
+  }
+
+  @Test
+  public void find_EndaneredAnimal_byId() {
+  	EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Great Cat of water");
+    testEndangeredAnimal.save();
+  	EndaneredInfo testEndaneredInfo = new EndaneredInfo(testEndangeredAnimal.getId());
+  	testEndaneredInfo.setAge("young");
+	testEndaneredInfo.setHealth("ill");
+    testEndaneredInfo.save();
+    EndangeredAnimal foundEndangeredAnimal = testEndaneredInfo.FindAnimal();
+    assertTrue(foundEndangeredAnimal.equals(testEndangeredAnimal));
   }    
 }
