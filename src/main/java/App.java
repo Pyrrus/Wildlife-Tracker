@@ -83,5 +83,29 @@ public class App {
       response.redirect("/endangeredanimal");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    get("/sighting/new", (request, response) -> {
+      Map <String, Object> model = new HashMap <String, Object>();
+      model.put("template", "templates/sighting-add.vtl");
+      model.put("title", "Add sighting for the Animal");
+      model.put("eanimals", EndangeredAnimal.all());
+      model.put("animals", Animal.all());
+      model.put("header", header);
+      model.put("css", "");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/sighting/new", (request, response) -> {
+      Map <String, Object> model = new HashMap <String, Object>();
+      String name = request.queryParams("name");
+      String location = request.queryParams("location");
+      String[] animals = request.queryParamsValues("animals");
+      for (int i = 0; i < animals.length; i++) {
+        Sighting newSighting = new Sighting(Integer.parseInt(animals[i]), name, location);
+        newSighting.save();
+      }
+      response.redirect("/");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 }

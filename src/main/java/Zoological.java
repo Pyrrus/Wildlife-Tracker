@@ -80,13 +80,12 @@ public abstract class Zoological {
     }
   }
 
-  public Sighting getSighting() {
+  public List<Sighting> getSighting() {
     try (Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM sightings where animal_id = :id";
-      Sighting sighting = con.createQuery(sql)
-                         .addParameter("id", id)
-                         .executeAndFetchFirst(Sighting.class);
-      return sighting;
+      return con.createQuery(sql)
+             .addParameter("id", id)
+             .executeAndFetch(Sighting.class);
     }
   }
 

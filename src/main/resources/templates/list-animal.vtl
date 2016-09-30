@@ -24,7 +24,7 @@
 				 $animal.getName()
 			   </td>
 			   <td>
-			    #if ($animals.getSighting().size() > 0)
+			    #if ($animal.getSighting().size() > 0)
 			      <table class="table table-striped table-hover table-responsive">
 					<thead>
 					  <tr>
@@ -40,18 +40,14 @@
 					</tr>
 					</thead>
 					<tbody>
-	 			      #foreach ($sighting in $animals.getSighting())
+	 			      #foreach ($sighting in $animal.getSighting())
 						<tr>
 						  <td>
 							$sighting.getRanger()
 						  </td>
-						</tr>
-						<tr>
 						  <td>
 							$sighting.getLoction()
 						  </td>
-						</tr>
-						<tr>
 						  <td>
 							$sighting.getSee()
 						  </td>
