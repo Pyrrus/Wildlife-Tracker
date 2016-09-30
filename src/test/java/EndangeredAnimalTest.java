@@ -12,4 +12,16 @@ public class EndangeredAnimalTest {
     assertTrue(testEndangeredAnimal instanceof EndangeredAnimal);
   }
 
+  @Test
+  public void getName_ReturnEndangeredAnimalName_True() {
+    EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Great Cat of water");
+    assertEquals("Great Cat of water", testEndangeredAnimal.getName());
+  }
+
+  @Test
+  public void getType_ReturnEndangeredAnimalType_True() {
+    EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Great Cat of water");
+    assertEquals(true, testEndangeredAnimal.getType());
+  }
+
 }
